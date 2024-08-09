@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import colors from '../../themes/colors';
-// import colors from "../../themes/colors";
 
-const Dropdown = (props: {
+interface IDropdownProps {
     variant?: "primary" | "secondary" | "custom";
     size?: "sm" | "md" | "lg";
-    text: string;
-    options: {label: string, value: string}[];
-}) => {
-    const { options, variant='custom', size='sm', text } = props;
+    placeholder: string;
+    options: {label: string, value: string, icon?: React.ReactNode}[];
+    selected?: {label: string, value: string, icon?: React.ReactNode};
+    onSetSelected: (selected: {label: string, value: string, icon?: React.ReactNode}) => void;
+}
+
+const Dropdown = (props: IDropdownProps) => {
+    const { options, variant='primary', size='sm', placeholder, selected, onSetSelected } = props;
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -33,7 +36,7 @@ const Dropdown = (props: {
         >
             <button
                 type="button"
-                className="inline-flex justify-between w-full px-2 items-center"
+                className="inline-flex justify-between w-full items-center px-4"
                 id="dropdownMenuButton1"
                 data-dropdown-toggle="dropdownMenuButton1"
                 onClick={toggleDropdown}
@@ -41,59 +44,72 @@ const Dropdown = (props: {
                     height: size==='lg' && '66px' || size==='md'&& '58px'||'49px',
                 }}
             >
-                <text className={`text-white font-bold text-2xl 
-                    ${variant=='primary'&&'hover:text-primary Click:text-primary'||
-                    variant=='secondary'&&'hover:text-secondary Click:text-secondary'||
-                    'hover:text-background Click:text-background'}`}
-                >
-                    {text}
-                </text> 
-                <text className={`text-white font-bold text-2xl`}>
-                    {!isOpen ? `▼` : `▲`}
-                </text>
+                {selected?
+                    <>
+                        <span className={`
+                            text-white 
+                            font-bold 
+                            text-md 
+                            ${variant=='primary'&&
+                                'hover:text-primary Click:text-primary'||
+                            variant=='secondary'&&'hover:text-secondary Click:text-secondary'||
+                            'hover:text-background Click:text-background'}
+                        `}
+                        >
+                            {selected.label}
+                        </span> 
+                        <span className={`pt-7 w-6 text-white font-bold text-md`}>
+                            {selected.icon}
+                        </span>
+                    </>:
+                    <>
+                        <span className={`text-white font-bold text-md 
+                            ${variant=='primary'&&'hover:text-primary Click:text-primary'||
+                            variant=='secondary'&&'hover:text-secondary Click:text-secondary'||
+                            'hover:text-background Click:text-background'}`}
+                        >
+                            {placeholder}
+                        </span> 
+                        <span className={`text-white font-bold text-md`}>
+                            {!isOpen ? `▼` : `▲`}
+                        </span>
+                    </>
+                }
             </button>
             <div
                 id="dropdownMenuButton1"
-                // className="relative inline-block text-left"
                 style={{
                     width: size==='lg' && '369px' || size==='md'&& '311px'||'285px',
                     maxHeight: '358px',
-                    borderBottomRightRadius: isOpen ? '0' : '10px',
-                    borderBottomLeftRadius: isOpen ? '0' : '10px',
+                    background: variant=='primary'&&
+                        `linear-gradient(to right, ${colors.primaryshade['700']}, ${colors.primary}, ${colors.primaryshade['700']}`||
+                        variant=='secondary'&&
+                        `linear-gradient(to right, ${colors.secondaryshade['700']}, ${colors.secondary}, ${colors.secondaryshade['700']}`||
+                        `linear-gradient(to right, ${colors.backgroundshade['700']}, ${colors.background}, ${colors.backgroundshade['700']})`
                 }}
-                className={`z-10 absolute right-0 mt-0 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 ${isOpen ? "block" : "hidden"}`}
+                className={`z-10 absolute right-0 mt-0 w-48 origin-top-right rounded-b-md bg-white shadow-lg ring-1 ring-black ring-opacity-5  ${isOpen ? "block" : "hidden"}`}
             >
-                <div className="py-1">
-                    {options.map((option) => (
-                        <div 
-                            style={{
-                                width: size==='lg' && '369px' || size==='md'&& '311px'||'285px',
-                                background: variant=='primary'&&
-                                `linear-gradient(to right, ${colors.primaryshade['900']}, ${colors.primary}, ${colors.primaryshade['900']}`||
-                                variant=='secondary'&&
-                                `linear-gradient(to right, ${colors.secondaryshade['900']}, ${colors.secondary}, ${colors.secondaryshade['900']}`||
-                                `linear-gradient(to right, ${colors.backgroundshade['900']}, ${colors.background}, ${colors.backgroundshade['900']})`
-                            }}
-                            // ${variant=='primary'&&'hover:text-primary Click:text-primary'||
-                            // variant=='secondary'&&'hover:text-secondary Click:text-secondary'||
-                            // 'hover:text-background Click:text-background'}
-                            className={`w-full block px-4 py-2 
-                                bg-gradient-to-r from-dark via-${variant} to-dark`
-                            }
-                        >
-                            <a
-                                href="#"
-                                className={` 
-                                    text-white text-sm ${variant=='primary'&&'hover:text-primary Click:text-primary'||
-                                    variant=='secondary'&&'hover:text-secondary Click:text-secondary'||
-                                    'hover:text-background Click:text-background'}`
-                                }
-                            >
-                                {option.label}
-                            </a>
+                {options.map((option, index) => (
+                    <div 
+                        key={index}
+                        className={`flex px-4 py-2 justify-between 
+                            ${index!==options.length-1 && 'border-b border-backgroundshade-400'} 
+                            text-white text-sm ${variant=='primary'&&'hover:text-primary Click:text-primary'||
+                            variant=='secondary'&&'hover:text-secondary Click:text-secondary'||
+                            'hover:text-background Click:text-background'} 
+                            font-bold`
+                        }
+                        onClick={() => {
+                            toggleDropdown();
+                            onSetSelected(option);
+                        }}
+                    >
+                        {option.label}
+                        <div className='h-1'>
+                            {option.icon}
                         </div>
-                    ))}
-                </div>
+                    </div>
+                ))}
             </div>
         </div>
     );
