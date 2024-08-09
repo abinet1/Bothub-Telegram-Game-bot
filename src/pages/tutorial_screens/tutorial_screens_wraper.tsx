@@ -1,6 +1,4 @@
-import React from 'react'
 import onbordingImage from '../../images/onbordingImage.png';
-import colors from '../../themes/colors';
 
 function TutorialScreens() {
    

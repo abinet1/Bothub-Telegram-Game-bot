@@ -1,7 +1,6 @@
 import React from "react";
 import { CloseIcon } from "../../icons";
-import InputField from "../inputField";
-import { Button, SmallActionButton } from "../button";
+import { SmallActionButton } from "../button";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;

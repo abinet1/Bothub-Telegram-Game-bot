@@ -1,4 +1,3 @@
-import colors from '../../themes/colors';
 interface ISmallActionButtonProps {
     variant?: 'success'|'danger',  
     placeholder: string,

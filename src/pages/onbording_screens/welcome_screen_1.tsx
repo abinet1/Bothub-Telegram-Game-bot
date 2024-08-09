@@ -1,4 +1,3 @@
-import React from 'react'
 import bgImage from '../../images/bgImage.png'
 import { InternetIcon, TelegramIcon, XSocialIcon, YoutubeIcon } from '../../icons';
 import colors from '../../themes/colors';
