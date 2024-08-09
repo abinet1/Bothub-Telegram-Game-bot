@@ -1,5 +1,5 @@
 import './App.css'
-import {Button, Dropdown} from './components/button'
+import {Dropdown} from './components/button'
 
 function App() {
   return (
