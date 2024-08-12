@@ -9,6 +9,13 @@ import MexicoFlagIcon from './MexicoFlagIcon';
 import ScotlandFlagIcon from './ScotlandFlagIcon';
 import SpainFlagIcon from './SpainFlagIcon';
 import CanadaFlagIcon from './CanadaFlagIcon';
+import NextIcon from './NextIcon';
+import HomeIcon from './HomeIcon';
+import GunIcon from './GunIcon';
+import MissionIcon from './MissionIcon';
+import TroopsIcon from './TroopsIcon';
+import EnergyIcon from './EnergyIcon';
+import BoostIcon from './BoostIcon';
 
 export interface IconProps{
     width?: string|number;
@@ -19,17 +26,23 @@ export interface IconProps{
 
 export {
     Battery,
+    GunIcon,
+    HomeIcon,
+    NextIcon,
+    BoostIcon,
     CloseIcon,
-    InternetIcon,
-    TelegramIcon,
-    YoutubeIcon,
+    EnergyIcon,
+    TroopsIcon,
+    MissionIcon,
     XSocialIcon,
+    YoutubeIcon,
+    TelegramIcon,
+    InternetIcon,
     JapanFlagIcon,
-    MexicoFlagIcon,
-    ScotlandFlagIcon,
     SpainFlagIcon,
     CanadaFlagIcon,
-
+    MexicoFlagIcon,
+    ScotlandFlagIcon,
 //     Boost,
 //     Check,
 //     Energy,

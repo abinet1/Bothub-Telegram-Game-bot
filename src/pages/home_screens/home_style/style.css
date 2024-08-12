@@ -1,0 +1,14 @@
+@keyframes moveUpAndFade {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1) rotate(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-300px) scale(2.5) rotate(0deg);
+    }
+  }
+  
+  .move-up {
+    animation: moveUpAndFade 0.8s forwards;
+  }

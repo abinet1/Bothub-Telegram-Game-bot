@@ -6,6 +6,12 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'gradient': '0 -50px 200px rgba(65, 4, 145), 0 -120px 480px rgba(25, 9, 67) inset',
+      },
+      clipPath: {
+        hexagon: 'polygon(0 50%, 25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%)',
+      },
       colors: {
         background: "#7700FF",
         primary: "#0ED4FF",

@@ -1,14 +1,17 @@
+import React from 'react';
 import colors from '../../themes/colors';
 interface IButtonProps {
     variant?: 'primary'|'secondary'|'custom', 
     size?: 'sm'|'md'|'lg', 
-    placeholder: string,
+    placeholder: string|React.ReactNode,
     detail?: string
     onClick?: () => void
+    customStyle?: React.CSSProperties
+
 }
 
 const Button = (props: IButtonProps) => {
-    const { variant='primary', size='md', placeholder, detail, onClick } = props;
+    const { variant='primary', size='md', placeholder, detail, onClick, customStyle } = props;
 
     return (
         <button 
@@ -20,7 +23,8 @@ const Button = (props: IButtonProps) => {
                     `linear-gradient(to right, ${colors.primary}, ${colors.dark}, ${colors.primary})`||
                     variant=='secondary'&&
                     `linear-gradient(to right, ${colors.secondary}, ${colors.dark}, ${colors.secondary})`||
-                    `linear-gradient(to right, ${colors.background}, ${colors.dark}, ${colors.background})`
+                    `linear-gradient(to right, ${colors.background}, ${colors.dark}, ${colors.background})`,
+                ...customStyle
             }}
             className={`text-white font-bold text-md 
                 ${variant=='primary'&&'hover:text-primary Click:text-primary'||

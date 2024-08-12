@@ -6,10 +6,11 @@ interface IOnbordingScreenWraperProps {
 }
 function OnbordingScreenWraper(props: IOnbordingScreenWraperProps) {
     const { children, bgImage } = props;
+    
 
     return (
         <div
-            className='w-screen h-[740px] relative overflow-hidden'
+            className='w-screen h-screen relative overflow-hidden'
         >
             {children}
             <div

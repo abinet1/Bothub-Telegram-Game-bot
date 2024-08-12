@@ -2,8 +2,10 @@ import React from 'react'
 import fighterJet from '../../images/fighterJet.png'
 import { Button, Modal } from '../../components';
 import OnbordingScreenWraper from './onbording_screen_wraper';
+import { WelcomeScreensProps } from './welcome_screen_2';
 
-function WelcomeScreenThree() {
+function WelcomeScreenThree(props: WelcomeScreensProps) {
+  const { nextScreen } = props;
   const[isOpen, setIsOpen] = React.useState(false);
   return (
     <OnbordingScreenWraper bgImage={fighterJet}>
@@ -23,7 +25,8 @@ function WelcomeScreenThree() {
             size='sm'
             placeholder='Proceed with Tutorial'
             detail='(Earn 10,000 Tokens Bonus)'
-            variant='custom'          
+            variant='custom' 
+            onClick={nextScreen}         
           />
           <Button
             size='sm'
