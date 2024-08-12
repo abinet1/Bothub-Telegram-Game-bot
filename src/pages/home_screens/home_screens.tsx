@@ -1,4 +1,3 @@
-import React from 'react';
 import { ScoreProgressBar } from '../../components';
 import alliance_smile from '../../images/alliance_smile.png';
 import background_flower from '../../images/background_flower.png';

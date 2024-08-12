@@ -10,9 +10,10 @@ const router = createBrowserRouter( [
   {path: '/home', element: <HomeScreens />}
 ]) 
 
-const tele = window.Telegram.WebApp;
 
 function App() {
+  // @ts-expect-error
+  const tele = window?.Telegram.WebApp;
   
   React.useEffect(()=>{
     tele.ready()
