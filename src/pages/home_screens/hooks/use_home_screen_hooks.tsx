@@ -7,7 +7,7 @@ export const useHomeScreen = () => {
     const level: {
         [key: number]: {min: number, max: number}
     }= {
-        1: {min: 0, max: 1010},
+        1: {min: 0, max: 1020},
         2: {min: 1010, max: 10000},
         3: {min: 10000, max: 100000},
         4: {min: 100000, max: 1000000},
