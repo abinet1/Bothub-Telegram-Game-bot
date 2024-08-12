@@ -38,24 +38,20 @@ function WelcomeScreenTwo(props: WelcomeScreensProps) {
                 'value': 'English',
                 'icon': <JapanFlagIcon width={45} height={45} />,
               },{
-                'label': 'Russian',
-                'value': 'Russian',
-                'icon': <CanadaFlagIcon width={45} height={45}/>,
-              },{
-                'label': 'Japanese',
-                'value': 'Japanese',
+                'label': 'Japan',
+                'value': 'Japan',
                 'icon': <JapanFlagIcon width={45} height={45} />
               },{
-                'label': 'Chinese',
-                'value': 'Chinese',
+                'label': 'Spen',
+                'value': 'Spen',
                 'icon': <SpainFlagIcon  width={45} height={45}/>
               },{
                 'label': 'Mexico',
                 'value': 'Mexico',
                 'icon': <MexicoFlagIcon  width={45} height={45}/>
               },{
-                'label': 'Canada',
-                'value': 'Canada',
+                'label': 'Scotland',
+                'value': 'Scotland',
                 'icon': <ScotlandFlagIcon  width={45} height={45}/>
               },
             ]}
