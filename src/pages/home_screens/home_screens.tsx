@@ -8,27 +8,31 @@ import colors from '../../themes/colors';
 import './home_style/style.css';
 import { useHomeScreen } from './hooks';
 
-
 function HomeScreens() {
 
-    const {totalCoins, coinCount, getProgress, handleClick, } =  useHomeScreen();
+    const {totalCoins, coinCount, getProgress, handleClick, user } =  useHomeScreen();
     
     return (
         <HomeScreensWrapper bottomBar={true} topBar={true}>
             <div className='h-full w-full p-5'>
                 
                 <div className='flex w-full justify-between ' style={{ overflow: 'hidden'}}>
-                    <h1 className='text-white text-2xl font-bold text-center'>Username</h1>
-                    <div style={{marginRight: '-30px'}}>
-                        <CanadaFlagIcon width={'75px'} height={'75px'}/>
+                    <h1 className='text-white text-xl font-bold text-center'>{user?.username}</h1>
+                    <div className='mr-[-15px]'>
+                        {
+                            <text >
+                                {user?.location?.icon}    
+                            </text>||
+                            <CanadaFlagIcon width={'75px'} height={'75px'}/> 
+                        }
                     </div>
                 </div>
-                <text className='text-white font-bold'>
+                <text className='text-white text-sm font-bold'>
                     Your current level is displayed here, collect coins and increase your level
                 </text>
-                <div className='w-[372px] py-[50px]'>
+                <div className='w-[352px] py-[20px]'>
                     <ScoreProgressBar 
-                        level={1} 
+                        level={user?.rank} 
                         size='sm' 
                         totalScore={totalCoins} 
                         currentScore={coinCount} 
@@ -46,7 +50,6 @@ function HomeScreens() {
                         justify-center 
                         w-full
                         click-effect 
-                        shadow-lg 
                         relative 
                         overflow-hidden 
                         transition-transform 
@@ -57,10 +60,10 @@ function HomeScreens() {
                     ' 
                     onClick={handleClick}
                 >
-                    <div className='absolute top-10 w-[100%]' style={{zIndex: '1'}}>
-                        <img src={background_flower} />
+                    <div className='absolute top-10 w-[90%]' style={{zIndex: '1'}}>
+                        <img src={background_flower}/>
                     </div>
-                    <div style={{zIndex: '1', width: '44%'}}>
+                    <div style={{zIndex: '1', width: '42%'}}>
                         <img src={alliance_smile} />
                     </div>
                 </div>

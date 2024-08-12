@@ -51,7 +51,7 @@ const ScoreProgressBar = (props: IScoreProgressBarProps) => {
                         width: '100%',
                         height: '100%',
                         backgroundImage: 'linear-gradient(to right, #7700FF 0%, #FFFFFF 52.5%, #7700FF 100%)',
-                        clipPath: 'polygon(0 50%, 21px 0, 350px 0, 372px 50%, 350px 100%, 21px 100%)',
+                        clipPath: 'polygon(0 50%, 21px 0, 300px 0, 322px 50%, 300px 100%, 21px 100%)',
                     }}
                 />
                 <div
@@ -62,7 +62,7 @@ const ScoreProgressBar = (props: IScoreProgressBarProps) => {
                     width: '100%', // Adjust for progress
                     height: '91%',
                     background: '#090a24',
-                    clipPath: 'polygon(0 50%, 19px 0, 348px 0, 367px 50%, 347px 100%, 19px 100%)',
+                    clipPath: 'polygon(0 50%, 19px 0, 298px 0, 317px 50%, 297px 100%, 19px 100%)',
                     }}
                 />
                 <div
@@ -73,7 +73,7 @@ const ScoreProgressBar = (props: IScoreProgressBarProps) => {
                     width: `${progress}%`, // Adjust for progress
                     height: '91%', 
                     backgroundImage: 'linear-gradient(to right, #190944, #7700FF)',
-                    clipPath: 'polygon(0 50%, 19px 0, 350px 0, 368px 50%, 349px 100%, 19px 100%)',
+                    clipPath: 'polygon(0 50%, 19px 0, 300px 0, 318px 50%, 299px 100%, 19px 100%)',
                     }}
                 />
                 <h1 className="absolute text-xl text-white font-bold mt-1 ml-[25%]">

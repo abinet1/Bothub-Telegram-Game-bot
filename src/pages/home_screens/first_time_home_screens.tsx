@@ -6,8 +6,22 @@ import PopU_Bonus_Background from '../../images/PopU_Bonus_Background.png';
 import coin_image from '../../images/coin_image.png';
 import alliance_smile from '../../images/alliance_smile.png';
 import HomeScreensWrapper from './home_screens_wrapper';
+import { useNavigate } from 'react-router-dom';
+import {  useDispatch } from 'react-redux';
+import { setUpdate } from '../../redux';
 
 function FirstTimeHomeScreens() {
+
+    const [currentTab, setCurrentTab] = React.useState('tab_one');
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+  
+    const addRank = () => {
+        dispatch(setUpdate({ rank: 1, score: 999, }));
+    };
+
+
     const stateScreens: {[key: string]: React.ReactNode} = {
         'tab_one': <InPageModal 
             onClose={()=>{}} 
@@ -37,7 +51,10 @@ function FirstTimeHomeScreens() {
             }}
             customAction={
                 <Button 
-                    onClick={()=>{setCurrentTab('tab_two')}} 
+                    onClick={()=>{
+                        addRank();
+                        setCurrentTab('tab_two');
+                    }} 
                     placeholder={
                         <h1 className={`text-white font-bold text-2xl`}>
                             Receive a gift 
@@ -74,7 +91,9 @@ function FirstTimeHomeScreens() {
             }}
             customAction={
                 <Button 
-                    onClick={()=>{}} 
+                    onClick={()=>{
+                        navigate('/home');
+                    }} 
                     placeholder={
                         <h1 className={`text-white font-bold text-xl`}>
                             Start defense 
@@ -90,8 +109,6 @@ function FirstTimeHomeScreens() {
             }
         />,
     }
-
-    const [currentTab, setCurrentTab] = React.useState('tab_one');
     
     
     return (

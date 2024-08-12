@@ -2,11 +2,18 @@ import React from 'react'
 import fighterJet from '../../images/fighterJet.png'
 import { Button, Modal } from '../../components';
 import OnbordingScreenWraper from './onbording_screen_wraper';
-import { WelcomeScreensProps } from './welcome_screen_2';
+
+interface WelcomeScreensProps {
+  nextScreen: () => void;
+}
 
 function WelcomeScreenThree(props: WelcomeScreensProps) {
   const { nextScreen } = props;
   const[isOpen, setIsOpen] = React.useState(false);
+
+  // const { user, setUser } = useContext(MyContext);
+  // console.log(user);
+
   return (
     <OnbordingScreenWraper bgImage={fighterJet}>
     

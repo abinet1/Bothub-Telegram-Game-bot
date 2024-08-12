@@ -9,26 +9,15 @@ import {
   CanadaFlagIcon,
 } from '../../icons';
 import OnbordingScreenWraper from './onbording_screen_wraper';
-import { useSearchParams } from 'react-router-dom';
-import { makeCall } from '../../api/makeCall';
-
+// import { useSearchParams } from 'react-router-dom';
+// import { makeCall } from '../../api/makeCall';
 
 export interface WelcomeScreensProps {
-  nextScreen: () => void;
+  nextScreen: (selectedvalue: {label: string, value: string, icon?: React.ReactNode} | undefined) => void;
 }
 function WelcomeScreenTwo(props: WelcomeScreensProps) {
   const { nextScreen } = props;
   const [selected, setSelected] = React.useState<{label: string, value: string, icon?: React.ReactNode} | undefined>(undefined);
-
-  const [searchParams] = useSearchParams();
-  const username = searchParams.get('username');
-
-  const onConfirm = () => {
-    console.log('username', username, 'selected', selected);
-    if(username && selected){
-      makeCall(`/register`, 'POST', { username, country: selected?.value, rank: '0', score: '0' });
-    }
-  }
 
   return (
     <OnbordingScreenWraper bgImage={fighterJet}>
@@ -78,8 +67,7 @@ function WelcomeScreenTwo(props: WelcomeScreensProps) {
           placeholder='Confirm'
           variant='primary' 
           onClick={()=>{
-            nextScreen();
-            onConfirm();
+            nextScreen(selected);
           }}         
         />
         </div>
