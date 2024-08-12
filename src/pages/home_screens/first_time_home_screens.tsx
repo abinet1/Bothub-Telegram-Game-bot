@@ -114,7 +114,7 @@ function FirstTimeHomeScreens() {
     return (
         <HomeScreensWrapper bottomBar={false} topBar={false}>
             <h1 className='text-white text-2xl font-bold text-center'>user name</h1>
-            <div className='w-[372px] py-[50px]'>
+            <div className='w-[342px] py-[50px]'>
                 <ScoreProgressBar level={1} size='sm' totalScore={999} currentScore={555} />
             </div>
 

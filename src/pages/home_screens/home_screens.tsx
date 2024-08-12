@@ -29,7 +29,7 @@ function HomeScreens() {
                 <text className='text-white text-sm font-bold'>
                     Your current level is displayed here, collect coins and increase your level
                 </text>
-                <div className='w-[352px] py-[20px]'>
+                <div className='w-[342px] py-[20px]'>
                     <ScoreProgressBar 
                         level={user?.rank} 
                         size='sm' 
