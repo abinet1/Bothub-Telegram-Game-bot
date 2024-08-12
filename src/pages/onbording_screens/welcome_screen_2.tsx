@@ -46,6 +46,10 @@ function WelcomeScreenTwo(props: WelcomeScreensProps) {
                 'value': 'Spen',
                 'icon': <SpainFlagIcon  width={45} height={45}/>
               },{
+                'label': 'Canada',
+                'value': 'Canada',
+                'icon': <CanadaFlagIcon  width={45} height={45}/>
+              },{
                 'label': 'Mexico',
                 'value': 'Mexico',
                 'icon': <MexicoFlagIcon  width={45} height={45}/>
