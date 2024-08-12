@@ -1,21 +1,26 @@
-# Bothub Telegram App
+![Screenshot_20240812_113714_Telegram](https://github.com/user-attachments/assets/ab62374b-b7e4-4c03-86d5-660009de7d1d)![Screenshot_20240812_113702_Telegram](https://github.com/user-attachments/assets/1cc952d5-b555-4500-a6b1-c074b14089d1)# Bothub Telegram App
 
-This repository contains the code for the basic Telegram app developed as part of the coding task for the Developer role at Bothub. The app is built using React.js and Telegraf, following the provided Figma design.
+This is a basic Telegram app developed as test. The app is built using React.js and Telegraf.
 
 ## Table of Contents
 
 - [Overview](#overview)
+- [Show Case](#showcase)
 - [Folder Structure](#folder-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Documentation](#documentation)
-- [Tech Stack](#tech-stack)
-- [Contributing](#contributing)
-- [License](#license)
+- [Getting Started](#gettingstarted)
 
 ## Overview
 
 This project implements a basic Telegram app based on the provided Figma design. The app is functional and user-friendly, adhering to best practices in code structure and cleanliness. Comprehensive documentation is provided to detail the setup, functionality, and code structure.
+
+## Show Case
+
+![Screenshot_20240812_113714_Telegram](https://github.com/user-attachments/assets/e88778c7-4b9b-4ced-89d0-3088113aeafc)
+
+![Screenshot_20240812_113702_Telegram](https://github.com/user-attachments/assets/49cf8799-620f-4357-8f0e-09196cddeeda)
+
+![Screenshot_20240812_113714_Telegram](https://github.com/user-attachments/assets/6b36160c-68ac-4a74-b68b-9cca0d4f3622)
+
 
 ## Folder Structure
 
@@ -95,7 +100,4 @@ To get started with either the initial setup or the final version, follow these 
 
     Navigate to localhost to see the final version of the application.
 
-## Contact
-
-For any inquiries, please contact me in Telegram: [Nikandr Surkov](https://t.me/nikandr_s).
 
