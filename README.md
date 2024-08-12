@@ -1,13 +1,38 @@
-# Hamster Kombat Clone
+# Bothub Telegram App
 
-This repository contains the initial setup and the final version of the Hamster Kombat clone project, including the basic project structure, necessary images, and icons.
+This repository contains the code for the basic Telegram app developed as part of the coding task for the Developer role at Bothub. The app is built using React.js and Telegraf, following the provided Figma design.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Folder Structure](#folder-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Documentation](#documentation)
+- [Tech Stack](#tech-stack)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Overview
 
-This project is a clone of the popular Telegram mini app, Hamster Kombat. The repository provides two branches:
+This project implements a basic Telegram app based on the provided Figma design. The app is functional and user-friendly, adhering to best practices in code structure and cleanliness. Comprehensive documentation is provided to detail the setup, functionality, and code structure.
 
-1. **Initial Setup**: Provides the foundational structure and assets needed to build the full application.
-2. **Final Version**: The completed application with all functionalities.
+## Folder Structure
+
+The project is organized into the following folders:
+
+```plaintext
+src
+│
+├── api         # Handles API interactions with Telegram and other services
+├── components  # Reusable UI components
+├── icons       # Icon assets used in the app
+├── images      # Image assets used in the app
+├── pages       # Page components representing different views of the app
+├── redux       # Redux store and slices for state management
+├── theme       # Theming and styling configurations
+└── util        # Utility functions and helpers
+```
 
 ## Getting Started
 
