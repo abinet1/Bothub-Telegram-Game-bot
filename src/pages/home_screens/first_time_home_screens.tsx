@@ -8,7 +8,8 @@ import alliance_smile from '../../images/alliance_smile.png';
 import HomeScreensWrapper from './home_screens_wrapper';
 import { useNavigate } from 'react-router-dom';
 import {  useDispatch } from 'react-redux';
-import { setUpdate } from '../../redux';
+import { setUpdate, UserState } from '../../redux';
+import { useSelector } from 'react-redux';
 
 function FirstTimeHomeScreens() {
 
@@ -109,11 +110,13 @@ function FirstTimeHomeScreens() {
             }
         />,
     }
+
+    const user = useSelector((state: {user: UserState}) => state.user?.user);
     
     
     return (
         <HomeScreensWrapper bottomBar={false} topBar={false}>
-            <h1 className='text-white text-2xl font-bold text-center'>user name</h1>
+            <h1 className='text-white text-2xl font-bold text-center'>{user.username}</h1>
             <div className='w-[342px] py-[50px]'>
                 <ScoreProgressBar level={1} size='sm' totalScore={999} currentScore={555} />
             </div>
