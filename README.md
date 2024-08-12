@@ -14,12 +14,10 @@ This is a basic Telegram app developed as test. The app is built using React.js 
 This project implements a basic Telegram app based on the provided Figma design. The app is functional and user-friendly, adhering to best practices in code structure and cleanliness. Comprehensive documentation is provided to detail the setup, functionality, and code structure.
 
 ## Show Case
-![Screenshot_20240812_113641_Telegram](https://github.com/user-attachments/assets/6f61dc29-f6a5-4504-8149-068818dfa994)
-![Screenshot_20240812_113702_Telegram](https://github.com/user-attachments/assets/cec670df-5b5a-4761-884c-39058b8d3b5d)
+![photo_3_2024-08-12_16-07-48](https://github.com/user-attachments/assets/179bc4f8-a193-4e0f-abd3-b1681b9d4dd3)
+![photo_2_2024-08-12_16-07-48](https://github.com/user-attachments/assets/d9c1e617-2ee1-4c99-85da-b311d6f88de6)
+![photo_1_2024-08-12_16-07-48](https://github.com/user-attachments/assets/c00d1832-b4b5-4a14-a877-60c6e180a43a)
 
-![photo_3_2024-08-12_16-08-20](https://github.com/user-attachments/assets/60b91a10-af13-4a76-86bd-4183770b0ebb)
-![photo_2_2024-08-12_16-07-48](https://github.com/user-attachments/assets/d6f29cb2-a1a5-4c05-9c37-657d3083c583)
-![photo_1_2024-08-12_16-07-48](https://github.com/user-attachments/assets/71e88cfd-69c3-4a58-9bf6-bca94b83891c)
 
 ## Folder Structure
 
